@@ -116,7 +116,8 @@ float calculateRevenue(int index) {
 void bubbleSort() {
     for (int i = 0; i < jumlahPesanan - 1; i++) {
         for (int j = 0; j < jumlahPesanan - i - 1; j++) {
-            if (pesanan[j].jumlahTiket > pesanan[j + 1].jumlahTiket) 
+            if (pesanan[j].jumlahTiket > pesanan[j + 1].jumlahTiket) {
+                // Tukar pesanan[j] dengan pesanan[j + 1]
                 Pesanan temp = pesanan[j];
                 pesanan[j] = pesanan[j + 1];
                 pesanan[j + 1] = temp;
@@ -131,10 +132,10 @@ void displayPesanan() {
         printf("Tidak ada pesanan yang ditampilkan\n");
         return;
     }
-    printf("\n%-20s %-15s %-10s %-10s %-15s %-20s\n", "Nama", "Jenis","Jumlah","Harga","Kode Penerbangan","Tanggal Keberangkatan");
-    printf("---------------------------------------------------------------------------------------------------\n");
+    printf("\n%-15s %-15s %-10s %-15s %-20s %-25s\n", "Nama", "Jenis",   "Jumlah",   "Harga",  "Kode Penerbangan",   "Tanggal Keberangkatan");
+    printf("------------------------------------------------------------------------------------------------------\n");
     for (int i = 0; i < jumlahPesanan; i++) {
-        printf("%-20s %-15s %-10d %-10.2f %-15s %-20s\n", pesanan[i].nama, pesanan[i].jenisTiket, pesanan[i].jumlahTiket, pesanan[i].hargaTiket, pesanan[i].kodePenerbangan, pesanan[i].tanggalKeberangkatan);
+        printf("%-15s %-15s %-10d %-15.2f %-20s %-25s\n", pesanan[i].nama, pesanan[i].jenisTiket, pesanan[i].jumlahTiket, pesanan[i].hargaTiket, pesanan[i].kodePenerbangan, pesanan[i].tanggalKeberangkatan);
     }
 }
 
